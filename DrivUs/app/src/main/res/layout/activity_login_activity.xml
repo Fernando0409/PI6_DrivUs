@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_marginTop="120dp"
+        app:srcCompat="@mipmap/icono_drivus" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/editEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        app:startIconDrawable="@drawable/ic_email_edittext"
+        app:startIconTint="@color/white"
+        app:endIconMode="clear_text"
+        app:endIconTint="@color/white"
+        app:helperTextTextColor="@color/white"
+        android:hint="Correo Electronico"
+        android:textColorHint="@color/white"
+        app:hintTextColor="@color/white"
+        app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color"
+        android:layout_below="@id/imageView2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/white"
+            android:textCursorDrawable="@null"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/editPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="20dp"
+        app:startIconDrawable="@drawable/ic_password_edittext"
+        app:startIconTint="@color/white"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/white"
+        app:helperTextTextColor="@color/white"
+        android:hint="Contraseña"
+        android:textColorHint="@color/white"
+        app:hintTextColor="@color/white"
+        app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color"
+        android:layout_below="@id/editEmail">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:textCursorDrawable="@null"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editPassword"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginRight="30dp"
+        app:backgroundTint="@null"
+        android:background="@drawable/background_button_login_signup"
+        android:text="Iniciar Sesión"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/txtPregunta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/candara_bold"
+        android:text="No tienes una cuenta?"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:layout_below="@id/btnLogin"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtPregunta"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginRight="30dp"
+        app:backgroundTint="@null"
+        android:background="@drawable/background_button_login_blue"
+        android:text="Registrar"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

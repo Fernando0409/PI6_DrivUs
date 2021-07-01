@@ -23,12 +23,15 @@ import com.google.android.material.textfield.TextInputLayout;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
 import java.util.HashMap;
 import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     TextInputLayout etLogin_Email, etLogin_Pass;
     MaterialButton bnLogin, bnSignUp;
+    String new_passwordUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,20 +61,28 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         JSONObject login = new JSONObject(response);
                         String emailUser = login.getString("email");
                         String passwordUser = login.getString("password");
-                        if (emailUser.equals(User_Email) && passwordUser.equals(User_Pass)) {
+                        try {
+                            MessageDigest digest = MessageDigest.getInstance("SHA-1");
+                            digest.reset();
+                            digest.update(User_Pass.getBytes("utf8"));
+                            new_passwordUser = String.format("%040x", new BigInteger(1, digest.digest()));
+                        } catch (Exception e){
+                            e.printStackTrace();
+                        }
+                        if (emailUser.equals(User_Email) && passwordUser.equals(new_passwordUser)) {
                             Intent inicio_activity = new Intent(LoginActivity.this, Inicio_Prueba.class);
                             startActivity(inicio_activity);
                         } else {
                             Toast.makeText(LoginActivity.this, "Usuario o Contraseña Incorrecta", Toast.LENGTH_LONG).show();
                         }
                     } catch (JSONException e) {
-                        e.printStackTrace();
+                        Toast.makeText(LoginActivity.this, "Usuario o Contraseña Incorrecta", Toast.LENGTH_LONG).show();
                     }
                 }
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    Toast.makeText(LoginActivity.this, error.toString(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "Usuario o Contraseña Incorrecta", Toast.LENGTH_LONG).show();
                 }
             }) {
                 @Override

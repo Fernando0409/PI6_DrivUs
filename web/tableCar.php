@@ -5,7 +5,7 @@
 ?>
 
 <div>
-	<table class="table table-hover table-condensed table-bordered" id="iddatatable">
+	<table class=" table table-hover table-condensed table-bordered" id="iddatatable">
 		<thead style="background-color: #dc3545;color: white; font-weight: bold;">
 			<tr>
 				<td>Marca</td>
@@ -16,6 +16,7 @@
 				<td>Placas</td>
 				<td>Precio</td>
 				<td>Estado</td>
+				<td>Visualizar</td>
 				<td>Editar</td>
 				<td>Eliminar</td>
 			</tr>
@@ -30,6 +31,7 @@
 				<td>Placas</td>
 				<td>Precio</td>
 				<td>Estado</td>
+				<td>Visualizar</td>
 				<td>Editar</td>
 				<td>Eliminar</td>
 			</tr>
@@ -50,6 +52,12 @@
 									 	echo "Ocupado";
 									else
 											echo "En reparacion"; ?></td>
+				<td style="text-align: center">
+					<span class="btn btn-success btn-xs" data-toggle="modal" data-target="#modalVer"
+								onclick="verDatos('<<?php echo $mostrar[0] ?>')">
+								<span class="fa fa-eye"></span>
+					</span>
+				</td>
 				<td style="text-align: center;">
 					<span class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modalEdit"
 					onclick="agregarDatos('<?php echo $mostrar[0] ?>')">

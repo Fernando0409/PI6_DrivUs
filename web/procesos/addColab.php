@@ -1,21 +1,30 @@
 <?php
-	require_once "../clases/conexion.php";
-	require_once "../clases/crud.php";
-	$obj= new crud();
-
+	require_once '../logica/root.php';
 	$datos=array(
-		$_POST['aPaterno'],
-		$_POST['aMaterno'],
-		$_POST['nombre'],
 		$_POST['email'],
-		$_POST['birthday'],
-		$_POST['telefono'],
-		$_POST['colonia'],
-		$_POST['calle'],
-		$_POST['noCasa'],
-		$_POST['cp']
+		$_POST['pass'],
+		$_POST['nombre'],
+		$_POST['aPaterno'],
+		$_POST['aMaterno']
 		);
 
-	echo $obj->registrarEmpleados($datos);
+		// Caputuro los valores de la Imagen
+		$nameFile = $_FILES['file']['name'];
+		$typeFile = $_FILES['file']['type'];
+		$sizeFile = $_FILES['file']['size'];
 
+		if($typeFile == "image/jpeg" || $typeFile == "image/jpg" || $typeFile == "image/png" || $typeFile == "image/gif"){
+			//								C:\xampp\htdocs\PI6_DrivUs\web\resources\img_coches
+			$carpetaDestino = $_SERVER['DOCUMENT_ROOT'].'/PI6_DrivUs/web/resources/img_coches/';
+			move_uploaded_file($_FILES['file']['tmp_name'], $carpetaDestino.$nameFile);
+
+			// Encriptacion
+			$password = md5($datos[1]);
+
+			$sql = "INSERT INTO empleado(email, password, nombre, aPaterno, aMaterno, url_image)
+				 VALUES('$datos[0]', '$password', '$datos[2]', '$datos[3]', '$datos[4]', '$nameFile')";
+
+			mysqli_query($conn, $sql);
+			header('location: ../colaboradoresList.php');
+		}
  ?>

@@ -196,3 +196,7 @@ justify-content: center;
 .down{
   display: flex;
 }
+
+.form-control{
+  width: 700px;
+}

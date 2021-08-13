@@ -4,7 +4,7 @@
 			$conexion=mysqli_connect('localhost',
 										'root',
 										'',
-										'drivus_test');
+										'storeLCP');
 			return $conexion;
 		}
 	}

@@ -12,7 +12,7 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<?php require_once 'scripts.php'; ?>
+		<?php require_once 'scripts.php'; ?>    
 		<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/style.css">
 		<title>DrivUs - Lista de coches</title>
@@ -24,16 +24,16 @@
 		</header>
 		<div class="l-navbar" id="nav-bar">
 				<nav class="nav">
-						<div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">DrivUs</span> </a>
-								<div class="nav_list">
-                  <a href="index.php" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Inicio</span> </a>
-                  <!--a href="usuarios.php" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Clientes</span> </a-->
-                  <a href="automoviles.php" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Automoviles</span> </a>
-                  <a href="colaboradores.php" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Colaboradores</span> </a>
-                  <!--a href="reportes.php" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Reportes</span> </a-->
-                  <!--a href="prestamos.php" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Prestamos</span> </a-->
-                </div>
-						</div>
+          <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">DrivUs</span> </a>
+              <div class="nav_list">
+                <a href="index.php" class="nav_link active"> <i class='bx bx-home-alt nav_icon'></i> <span class="nav_name">Inicio</span> </a>
+                <!--a href="usuarios.php" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Clientes</span> </a-->
+                <a href="automoviles.php" class="nav_link"> <i class='bx bxs-car nav_icon'></i> <span class="nav_name">Automoviles</span> </a>
+                <a href="colaboradores.php" class="nav_link"> <i class='bx bx-user-circle nav_icon'></i> <span class="nav_name">Colaboradores</span> </a>
+                <!--a href="reportes.php" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Reportes</span> </a-->
+                <!--a href="prestamos.php" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Prestamos</span> </a-->
+              </div>
+          </div>
 						<a href="logica/funciones/salir.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">Cerrar Sesion</span> </a>
 				</nav>
 		</div>
@@ -61,7 +61,7 @@
         </div> <!-- container -->
 
         <!-- Modal -->
-        <div class="modal fade" id="modalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id= "modalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">           
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
@@ -112,8 +112,7 @@
                 </div>
             </div>
         </div>
-
-				<script src="js/main.js"></script>
+			<script src="js/main.js"></script>
 	</body>
 </html>
 
